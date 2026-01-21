@@ -161,10 +161,27 @@ Orchestration Services
 - AWS Batch: run heavy batch computing workloads with infrastructure management, such as data processing or running simulations
 - Amazon LightSail: simplifies hosting for running web applications and websites
 - AWS Outposts: links AWS cloud services with on-prem data center for hybrid environments
+
+**TOPICS TO REVIEW**
+- AWS Service Models
   
 ## Module 4: Going Global
 
-
+Choosing AWS Regions
+- compliance: regulatory compliance and data protection laws differ across regions
+- proximity: regions closer to customers reduce data travel time and latency
+- feature availability: consider specific AWS features and services available in each region
+- pricing: different operational costs across regions
+  
+AWS Global Infrastructure
+- agility: ability to quickly adapt to changing requirements or market conditions
+- elasticity: ability of a system to automatically scale resources in response to changes in demand
+- edge location: locations outside of AZs that cache content to frequently accessed content to users with lower latency
+  
+Infrastructure and Automation
+- AWS CloudFormation: service to model and set up AWS resources so users can focus on managing applications rather than resources
+- supports infrastructure as code (IaC) to enable consistent, repeatable deployments across different environments
+  
 ## Module 5: Networking
 
 
