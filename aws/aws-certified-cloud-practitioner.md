@@ -184,6 +184,51 @@ Infrastructure and Automation
   
 ## Module 5: Networking
 
+Networking Components
+- Amazon Virtual Private Cloud (VPC): provision an isolated section of AWS Cloud where user can launch AWS resources in a virtual network they define themselves; allows users to control network resources and security
+- with VPC, users can organize their resources, share public resources, and isolate private resources
+- benefits of Amazon VPC: increase security, save time, control environment
+- subnet: range of IP addresses in user's VPC; allows user to organize resources into smaller sections and can be public or private
+- private subnet: contain resources that should not be exposed to internet
+- public subnet: resources with information that customers have privileges to view
+- public subnet requires internet gateway, private subnet requires virtual private gateway
+- virtual private network: VPN encrypts internet traffic to protect it from others who try to intercept or monitor it
+  
+Types of Gateways
+- internet gateway: VPC component that allows communication between VPC and internet
+- virtual private gateway: encrypted VPN connection to access private, internal AWS resources; allows protected internet traffic to enter into VPC
+- AWS Transit Gateway: connect Amazon VPCs and on-prem networks through central hub
+- Network Address Translation (NAT) Gateway: instances in private subnet can connect to services outside VPC, but external services cannot create connections with private instances
+- Amazon API Gateway: AWS service for creating, publishing, monitoring, and securing APIs at any scale
+  
+AWS Client VPN
+- networking service to connect to remote workers and on-premises networks to the cloud
+- provides authentication and remote access
+- fully managed, elastic service that scales up or down based on user demand
+- provides secure access to AWS resources and on-prem networks through an OpenVPN-based client
+- uses the AWS global network to work with global Regions
+  
+AWS Site-to-Site VPN
+- creates a secure connection between data center to AWS Cloud resources
+- provides high availability, secure and private sessions, and accelerates applications
+- can be used for application migration and secure communication between remote locations
+  
+AWS PrivateLink
+- provides high availability and security for user to privately connect VPC to services and resources without internet gateway, NAT device, public IP address, Direct Connect connection, or AWS Site-to-Site VPN connection
+- user controls API endpoints, sites, services, and resources through their VPC
+- secures traffic and connection with simplified management rules
+- connects clients in user's VPC to resources, other VPCs, and endpoints
+  
+AWS Direct Connect
+- establish dedicated private connection between network and VPC in AWS Cloud
+- reduce network costs and increases amount of bandwidth
+- used for latency-sensitive applications, large-scale data migration/transfer, and hybrid cloud architectures
+- latency-sensitive applications: bypass internet and provide consistent, low-latency network experience for video streaming and real-time applications needing high performance
+- large-scale data migration/transfer: ensure smooth and reliable data transfers at large-scale for real-time analysis
+- hybrid cloud architectures: use Direct Connect to link AWS and on-prem networks to build applications across multiple environments without compromising performance
+  
+Subnets
+- 
 
 ## Module 6: Storage
 
