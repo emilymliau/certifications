@@ -227,8 +227,21 @@ AWS Direct Connect
 - large-scale data migration/transfer: ensure smooth and reliable data transfers at large-scale for real-time analysis
 - hybrid cloud architectures: use Direct Connect to link AWS and on-prem networks to build applications across multiple environments without compromising performance
   
-Subnets
-- 
+Global Networking
+- edge networking: bringing information storage and computing abilities closer to devices that produce that information and the users who consume it
+- allows organizations to access data and content with lower latency
+
+Amazon Route 53
+- DNS that provides reliable and cost-effective way to route end users to internet applications
+- manage DNS records for domain names
+- connects user requests to infrastructure running inside and outside of AWS
+
+Amazon CloudFront
+- CloudFront: content delivery network that delivers your content with faster loading times, cost savings, and reliability
+- stores copies of content at locations closer to users to enable low latency
+
+AWS Global Accelerator
+- uses AWS global network to improve application availability, performance, and security
 
 ## Module 6: Storage
 
