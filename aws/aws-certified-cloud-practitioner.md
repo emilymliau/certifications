@@ -246,27 +246,65 @@ Security Groups
 - user can create one or multiple security groups for multiple Amazon EC2 instances within the same VPC
 - stateful packet filtering: security groups retain information about previous decisions made for incoming packets
 - instance level, stateful packet filtering, allow type rules, return traffic is automatically allowed if inbound traffic is allowed, user has fine-grained control of traffic for individal EC2 instances
-
+  
 Building an Amazon VPC
 - create VPC, subnets, internet gateway, and route traffic
 - edge networking: bringing information storage and computing abilities closer to the devices that produce that information and the users who consume it
 Global Networking
 - edge networking: bringing information storage and computing abilities closer to devices that produce that information and the users who consume it
 - allows organizations to access data and content with lower latency
-
+  
 Amazon Route 53
 - DNS that provides reliable and cost-effective way to route end users to internet applications
 - manage DNS records for domain names
 - connects user requests to infrastructure running inside and outside of AWS
-
+  
 Amazon CloudFront
 - CloudFront: content delivery network that delivers your content with faster loading times, cost savings, and reliability
 - stores copies of content at locations closer to users to enable low latency
-
+  
 AWS Global Accelerator
 - uses AWS global network to improve application availability, performance, and security
-
+  
 ## Module 6: Storage
+
+- types of storage: block storage, object storage, file storage
+  
+Block Storage
+- provides persistent, low-latency block-level storage volumes that attach to EC2 instances such as physical hard drives
+- encrypted, backed up, modified while in use without disrupting instance
+- Amazon EC2 instance store: unmanaged, non-persistent high-performance block storage directly attached to EC2 instances for temporary data
+- Amazon Elastic Block Store (EBS): managed service that provides persistent block storage volumes for EC2 instances for various types of workloads
+  
+Block Storage: Amazon EC2 Instance Store
+- block-level storage physically attached to EC2 instance host computer
+- used for temporary memory-based storage (buffers, caches, scratch data)
+- should not be used for applications that require data retention
+- if EC2 instance is terminated, all data written to attached instance store is deleted
+- benefits: storage is automatically available, cost effective, high performance
+  
+Block Storage: Amazon Elastic Block Store (EBS)
+- persistent block-level storage volumes for use with Amazon EC2 instances
+- provides consistent, low-latency performance for databases and file systems
+- can be backed up, resized, and attached to different EC2 instances
+- used for database hosting, backup storage for applications, and quick deployment of development environments using volume snapshots
+- supports data portability since EBS volumes can detach and reattach to instances as needed
+- if EC2 instance is terminated, all data written to attached EBS volume remains available
+- benefits: data migration, instance type changes, disaster recovery, cost optimization, performance tuning
+
+Object Storage
+- data storage architecture that manages data as objects in flat address space
+- unlimited scalability to store large amounts of unstructured data without worrying about capacity constraints
+- metadata capabilities to provide more efficient data management, searching, and analytics across large datasets
+- Amazon Simple Storage Service (S3): fully managed scalable object storage service for storing and retrieving any amount of data from anywhere
+
+File Storage
+- AWS file storage services provide shared file systems accessible over networks
+- multiple users and applications can access the same data simultaneously
+- Amazon Elastic File System (EFS): fully managed, scalable NFS file system used with AWS Cloud services and on-prem resources
+- Amazon FSx: fully managed file storage services for popular file systems
+- AWS Storage Gateway: fully managed, hybrid-cloud storage service that provides on-prem access to unlimited cloud storage
+- AWS Elastic Disaster Recovery: fully managed service that streamlines recovery of physical, virtual, and cloud-based servers into AWS
 
 
 ## Module 7: Databases
