@@ -285,19 +285,61 @@ Block Storage: Amazon EC2 Instance Store
   
 Block Storage: Amazon Elastic Block Store (EBS)
 - persistent block-level storage volumes for use with Amazon EC2 instances
+- provides high availability and durability
 - provides consistent, low-latency performance for databases and file systems
 - can be backed up, resized, and attached to different EC2 instances
 - used for database hosting, backup storage for applications, and quick deployment of development environments using volume snapshots
 - supports data portability since EBS volumes can detach and reattach to instances as needed
 - if EC2 instance is terminated, all data written to attached EBS volume remains available
 - benefits: data migration, instance type changes, disaster recovery, cost optimization, performance tuning
-
+  
+Amazon EBS Data Lifecycle Management
+- create, back up, and delete volumes and snapshots to optimize storage costs and data protection
+- EBS snapshots: point-in-time backups of EBS volume
+- customer schedules and manages EBS snapshots, and encrypts data
+- benefits of EBS snapshots: data protection and recovery, operational flexibility, cost effective
+  
+Amazon Data Lifecycle Manager
+- automate creation, retention, and deletion of EBS snapshots with Amazon Data Lifecycle Manager
+- create EBS snapshots policy, select target resource type, exclude volumes, set custom schedules, apply additional actions
+  
 Object Storage
 - data storage architecture that manages data as objects in flat address space
 - unlimited scalability to store large amounts of unstructured data without worrying about capacity constraints
 - metadata capabilities to provide more efficient data management, searching, and analytics across large datasets
 - Amazon Simple Storage Service (S3): fully managed scalable object storage service for storing and retrieving any amount of data from anywhere
-
+  
+Amazon Simple Storage Service (S3)
+- object storage service that can store unlimited amounts of data in AWS Cloud
+- used to handle large amounts of unstructured data (documents, images, videos)
+- durability: data is highly protected against loss
+- stores files as objects in buckets
+- integrates with other AWS services
+- object contains data, metadata, and key (unique identifier)
+- unlimited storage, object lifecycle management, broad range of use cases
+- everything stored in Amazon S3 is private by default
+- Amazon S3 bucket policies: resource-based policies that can only be attached to S3 buckets
+- identity-based policies: permissions that control what actions, groups, or roles can perform on S3 resources
+- encryption: protects data at rest and in transit to maintain data confidentiality and comply with security standards and regulations
+- encryption at rest: secures data stored in S3 buckets, preventing unauthorized access to stored objects
+- encryption in transit: safeguards data traveling to and from Amazon S3, maintaining secure communication between clients and the service
+  
+Amazon S3 Storage Classes and S3 Lifecycle
+- S3 Standard: default, general purpose storage for cloud applications, dynamic websites, content distribution
+- S3 Intelligent Tiering: used if data is unknown or changing access patterns; S3 moves data to the most cost-effective storage tier based on frequency of access (frequent, infrequent, archive instant access tiers)
+- S3 Standard Infrequent Access (Standard-IA): data that is accessed less frequently but requires quick access when needed
+- S3 One Zone Infrequent Access (One Zone-IA): stores data in a single AZ, which reduces costs compared to Standard-IA
+- S3 Express One Zone: stores data in single AZ to enable data access for most frequently accessed data and latency-sensitive applications
+- S3 Glacier Instant Retrieval: used for archiving data that is rarely accessed and requires millisecond retrieval
+- S3 Glacier Flexible Retrieval: low-cost storage for archived data that is accessed 1-2 times per year
+- S3 Glacier Deep Archive: lowest-cost Amazon S3 storage class; supports long-term retention and digital preservation for data access 1-2 times per year
+- S3 Outposts: delivers object storage to your on-prem AWS Outposts environment using Amazon S3 APIs and features; serves workloads with local data residency requirements
+  
+S3 Lifecycle
+- defines rules to automatically transition objects between different storage classes, or remove them based on age or usage patterns
+- transition actions: define when objects should transition to another storage class
+- expiration actions: define when objects expire and should be permanently deleted
+  
 File Storage
 - AWS file storage services provide shared file systems accessible over networks
 - multiple users and applications can access the same data simultaneously
@@ -305,8 +347,45 @@ File Storage
 - Amazon FSx: fully managed file storage services for popular file systems
 - AWS Storage Gateway: fully managed, hybrid-cloud storage service that provides on-prem access to unlimited cloud storage
 - AWS Elastic Disaster Recovery: fully managed service that streamlines recovery of physical, virtual, and cloud-based servers into AWS
-
-
+  
+Amazon Elastic File System (EFS)
+- fully managed, scalable file storage service used with AWS cloud services and on-prem resources
+- uses Linux Network File System (NFS) protocol
+- can be accessed by multiple EC2 instances at the same time
+- benefits: multi-AZ redundancy, shared access, elastic storage
+- storage classes: standard, one zone, archive
+- standard storage class: multi-AZ resilience, highest levels of durability and availability
+- one zone storage class: reduces storage costs by storing data in single AZ
+- archive storage class: cost-optimized for data that is rarely accessed
+- Amazon EFS data lifecycle: move data between storage classes based on usage patterns
+- transition to infrequent access (IA): files that are not accessed in Standard storage for 30 days are transitioned into IA
+- transition to archive: files that are not accessed in Standard storage for 90 days are transitioned into archive
+- transition to standard: files are not moved back to Standard storage, and they remain in the IA or Archive storage class when accessed
+  
+Amazon FSx (file systems)
+- cost-effective way to launch, run, and scale feature-rich, high-performance file systems in the cloud
+- supports various workloads with reliability, security, scalability, and diverse set of capabilities
+- supports multiple filesystem protocols, including Windows File Server, Lustre, OpenZFS, NetAPP ONTAP
+- benefits: file system integration, managed infrastructure, scalable storage, cost effective
+  
+AWS Storage Gateway
+- hybrid cloud storage service that provides on-prem access to unlimited cloud storage
+- useful for data recovery, data archiving
+- benefits: seamless integration, improved data management, local caching, cost optimization
+- S3 File Gateway: bridges local environment with Amazon S3; ideal for storing files directly in Amazon S3
+- Volume Gateway: creates block storage volumes locally, which can then be used by on-prem applications
+- cached volume mode: stores primary data in the cloud while frequently accessed data is cached locally for low-latency access
+- stored volume mode: locally keeps complete dataset while asynchronously backing it up to the cloud as EBS snapshots
+- Tape Gateway: useful for businesses using physical tape backups by enabling seamless migration of tape data into the cloud
+- S3 Glacier: low-cost storage class meant for data archiving and long-term backup
+  
+AWS Elastic Disaster Recovery
+- replicates critical workloads to AWS with minimal downtime
+- useful for industries where system availability is crucial
+- supports physical and virtual servers to enable rapid recovery during disruptions
+- reduces downtimes and data loss while eliminating the costs associated with maintaining secondary data centers
+- benefits: business resilience, streamlined disaster recovery, cost optimization
+  
 ## Module 7: Databases
 
 
