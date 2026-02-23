@@ -388,6 +388,10 @@ AWS Elastic Disaster Recovery
   
 ## Module 7: Databases
 
+Relational Database Services
+- relational database: stores data in an easily understandable, consistent, and scalable way that works for applications requiring structured data management
+- AWS offers fully managed relational database solutions that remove the burden of database administration while maintaining high availability and security
+- Amazon RDS: managed relational database service that handles routine database tasks including backups, patching, and hardware provisioning
 
 ## Module 8: AI, ML, and Data Analytics
 
